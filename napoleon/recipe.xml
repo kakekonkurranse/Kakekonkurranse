@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<cake xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://kakekonkurranse.bankid.no">
+<!--cake xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+	<title>Napoleon cake</title>
+	<description>The best cake out there!</description>
+	<time amount="5.5" unit="hour" unitShort="h" />
+	<complexity level="5" />
+	<ingredient_warnings>
+    	<warning>gluten</warning>
+    </ingredient_warnings>
+	<modules>
+		<module id="butter_dough" text="Butter dough">
+	        <time amount="3.5" unit="hour" unitShort="h" />
+			<ingredients>
+				<ingredient id="butter" text="Butter" amount="200" unit="gram" unitShort="g" />
+				<ingredient id="flour" text="Flour" amount="500" unit="gram" unitShort="g" />
+				<ingredient id="margarine" text="Margarine" amount="300" unit="gram" unitShort="g" />
+				<ingredient id="water" text="Water" amount="2.5" unit="decilitre" unitShort="dl" />
+			</ingredients>
+			<equipments>
+			    <equipment text="Boule" amount="1" />
+			</equipments>
+			<description>
+				<step number="1">Smuldre smøret inn i melet.</step>
+				<step number="2">Ha i vannet, arbeid til deigen er seig.</step>
+				<step number="3">Kjevle deigen ut og legg margarinen i midten. Brett over deigen fra begge sider og rulle ut en gang og brett i tre.</step>
+				<step number="4">La deigen hvile i kjøleskapet i 20 minutter.</step>
+				<step number="5">Repeat step 3 to 4 three or four times.</step>
+				<step number="6">Kjevle deigen til ca 1,5 mm tykkelse.</step>
+				<step number="7">Prikle gjennom hele deigen med en gaffel.</step>
+				<step number="8">Legg den på en bakeplate med bakepapir og stek den i 12-15 minutter på 200 &#176; Celsius.</step>
+			</description>
+		</module>
+		<module id="fill" text="Fill">
+	        <time amount="0.5" unit="hour" unitShort="h" />
+			<ingredients>
+				<ingredient id="cream" text="Cream" amount="3" unit="decilitre" unitShort="dl" />
+				<ingredient id="vanilla_cream" text="Vanilla cream" amount="500" unit="gram" unitShort="g" />
+				<ingredient id="gelatine" text="Gelatine" amount="8" unit="plates" unitShort="pl" />
+				<ingredient id="water" text="Water" amount="0.5" unit="decilitre" unitShort="dl" />
+				<ingredient id="rom_essence" text="Rom essence" amount="8" unit="drops" unitShort="drops" />
+			</ingredients>
+			<equipments>
+			    <equipment text="Boule" amount="1" />
+			</equipments>
+			<description>
+                <step number="1">La gelatinplatene ligge i bløt i kaldt vann ca. 5 minutter.</step>
+                <step number="2">Klem ut vannet og smelt gelatinen i kokende vann.</step>
+                <step number="3">Avkjøl gelatinen og bland den med vaniljekremen smakt til med romessens.</step>
+                <step number="4">Rør forsiktig inn vispet kremfløte. La kremen stå og stivne.</step>
+			</description>
+		</module>
+		<module id="glaze" text="Glaze">
+	        <time amount="0.5" unit="hour" unitShort="h" />
+			<ingredients>
+				<ingredient id="rom_essence" text="Rom essence" amount="2-6" unit="drops" unitShort="drops" />
+				<ingredient id="egg_white" text="Egg white" amount="1-2" unit="pieces" unitShort="pcs" />
+				<ingredient id="powdered_sugar" text="Powdered sugar" amount="500-1000" unit="gram" unitShort="g" />
+			</ingredients>
+			<equipments>
+			    <equipment text="Boule" amount="1" />
+			</equipments>
+			<description>
+				<step number="1">Bland melis med eggehvite.</step>
+				<step number="2">Smak til med romessens.</step>
+			</description>
+		</module>
+		<assembly>
+	        <time amount="1" unit="hour" unitShort="h" />
+			<step number="1">Fordel krem på halvparten av bunnene.</step>
+			<step number="2">Smør glasuren på den ene halvparten av butterdeigsplatene, som så legges på til lokk.</step>
+		</assembly>
+	</modules>
+</cake>

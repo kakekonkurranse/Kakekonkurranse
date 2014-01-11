@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://kakekonkurranse.bankid.no"
+	xmlns="http://kakekonkurranse.bankid.no" elementFormDefault="qualified">
+	
+	
+	<xs:element name="cake" type="cake" />
+	
+    <xs:complexType name="cake">
+        <xs:sequence>
+		<xs:element name="title" />
+		<xs:element name="description" />
+		<xs:element name="time" minOccurs="1" maxOccurs="1" type="time" />
+		<xs:element name="complexity" minOccurs="1" maxOccurs="1" type="complexity" />
+		<xs:element name="ingredient_warnings" minOccurs="0" maxOccurs="1" type="ingredient_warnings" />
+		<xs:element name="modules" type="module_list"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="module_list">
+        <xs:sequence>
+		<xs:element name="module" type="module" minOccurs="1" maxOccurs="unbounded" />
+		<xs:element name="assembly" type="assembly" minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="module">
+        <xs:sequence>
+		    <xs:element name="time" minOccurs="1" maxOccurs="1" type="time" />
+            <xs:element name="ingredients" type="ingredient_list" />
+            <xs:element name="equipments" type="equipment_list" />
+            <xs:element name="description" type="step_list" />
+		</xs:sequence>
+	    <xs:attribute name="id" type="xs:string" />
+	    <xs:attribute name="text" type="xs:string" />
+	</xs:complexType>
+	
+	<xs:complexType name="ingredient_list">
+        <xs:sequence>
+            <xs:element name="ingredient" minOccurs="1" maxOccurs="unbounded" type="ingredient" />
+        </xs:sequence>
+	</xs:complexType>
+
+    <xs:complexType name="ingredient_warnings">
+        <xs:sequence>
+            <xs:element name="warning" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+	<xs:complexType name="equipment_list">
+        <xs:sequence>
+            <xs:element name="equipment" minOccurs="1" maxOccurs="unbounded" type="equipment" />
+        </xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="step_list">
+		<xs:sequence>
+        <xs:element name="step" minOccurs="1" maxOccurs="unbounded" type="step" />
+        </xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="assembly">
+	    <xs:sequence>
+		    <xs:element name="time" minOccurs="1" maxOccurs="1" type="time" />
+		    <xs:element name="step" minOccurs="1" maxOccurs="unbounded" type="step" />
+	    </xs:sequence>
+	</xs:complexType>
+	
+    <xs:complexType name="ingredient">
+	    <xs:attribute name="id" type="xs:string" />
+	    <xs:attribute name="text" type="xs:string" />
+	    <xs:attribute name="amount" type="xs:string" />
+	    <xs:attribute name="unit" type="xs:string" />
+	    <xs:attribute name="unitShort" type="xs:string" />
+    </xs:complexType>
+
+    <xs:complexType name="equipment">
+	    <xs:attribute name="text" type="xs:string" />
+	    <xs:attribute name="amount" type="xs:string" />
+    </xs:complexType>
+    
+    <xs:complexType name="time">
+	    <xs:attribute name="amount" type="xs:string" />
+	    <xs:attribute name="unit" type="xs:string" />
+	    <xs:attribute name="unitShort" type="xs:string" />
+    </xs:complexType>
+
+    <xs:complexType name="complexity">
+        <xs:attribute name="level">
+        <xs:simpleType>
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="[1-5]"/>
+        </xs:restriction>
+        </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="step">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="number" type="xs:integer">
+                </xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+     </xs:complexType>
+
+</xs:schema>

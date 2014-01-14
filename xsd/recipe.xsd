@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://kakekonkurranse.bankid.no"
-	xmlns="http://kakekonkurranse.bankid.no" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://kakekonkurranse.finstadlille.no"
+	xmlns="http://kakekonkurranse.finstadlille.no" elementFormDefault="qualified">
 	
 	
 	<xs:element name="cake" type="cake" />

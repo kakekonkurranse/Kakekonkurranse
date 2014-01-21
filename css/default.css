@@ -1,0 +1,98 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #9DB28C;
+    /*background-image: url('../img/background.png');
+    background-repeat: repeat-x repeat-y;*/
+}
+
+div#content {
+    margin: 4em auto;
+    padding: 2em 2em;
+    background-color: #C5CEFF;
+    /*height: 100% !important;*/
+    width: 67%;
+    border-radius: 1em;
+    float: left;
+}
+
+.heading h1, p.description {
+    text-align: center;
+    padding: 0 0 0.5em 0;
+    margin: 0;
+}
+
+ul.inline {
+    list-style: none;
+    /*float: right;*/
+    /*clear: both;*/
+}
+
+.inline li {
+    display: inline;
+    padding: 0 2em;
+}
+
+.summary h3 {
+    display: inline;
+    padding: 0 1em 0 0;
+}
+
+img.difficulty {
+    height: 2em;
+    width: 1.5em;
+}
+
+div.ingredients {
+    clear: left;
+    float: left;
+    width: 33%;
+}
+
+div.heading {
+    float: left;
+    width: 66%;
+}
+div.procedure {
+    clear: left;
+    float: left;
+    width: 66%;
+}
+
+div.equipment {
+    float: left;
+}
+
+div.picture {
+    clear: left;
+    float: left;
+    /*border: 1px solid #000;*/
+    height: 15em;
+    width: 20em;
+}
+
+div.summary {
+    clear: right;
+    float: left;
+    width: 100%;
+}
+
+div.column_left {
+    clear: left;
+    float: left;
+    width: 33%;
+}
+
+div.column {
+    float: left;
+    width: 33%;
+}
+
+div.module, div.assembly {
+    clear: right;
+    float: right;
+    width: 66%;
+}
+
+

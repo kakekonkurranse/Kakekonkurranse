@@ -8,6 +8,7 @@
 	<ingredient_warnings>
     	<warning>gluten</warning>
     </ingredient_warnings>
+    <image>napoleon_cake2.gif</image>
 	<modules>
 		<module id="butter_dough" text="Butter dough">
 	        <time amount="3.5" unit="hour" unitShort="h" />

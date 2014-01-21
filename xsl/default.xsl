@@ -13,61 +13,110 @@
         <head>
             <title><xsl:value-of select="fl:title" /></title>
             <meta charset="utf-8" />
+            <link rel="stylesheet" type="text/css" href="../css/default.css" />
         </head>
     <body>
-        <h1><xsl:value-of select="fl:title" /></h1>
-        <p><xsl:value-of select="fl:description" /></p>
-        <p>Complexity: <xsl:value-of select="fl:complexity/@level" /></p>
-        <p>Time: <xsl:value-of select="fl:time/@amount" /><xsl:value-of select="fl:time/@unitShort" /></p>
+        <div id="content">
+        <!--header-->
+            <!--div-->
+            <div class="picture">
+                <img alt="Picture">
+                    <xsl:attribute name="src">
+                        <xsl:value-of select="fl:image"/>
+                    </xsl:attribute>
+                </img>
+            </div>
+            <div class="heading">
+                <h1><xsl:value-of select="fl:title" /></h1>
+                <p class="description"><xsl:value-of select="fl:description" /></p>
+            <!--/div-->
+            <div class="summary">
+                <ul class="inline">
+                    <li><h3>Complexity</h3><xsl:call-template name="addHat" /></li>
+                    <li><h3>Time</h3><xsl:value-of select="fl:time/@amount" /><xsl:value-of select="fl:time/@unitShort" /></li>
 
-        <xsl:for-each select="fl:ingredient_warnings/fl:warning">
-            <p>Warning: <xsl:value-of select="." /></p>
-        </xsl:for-each>
-
-        <p>Number of modules: <xsl:value-of select="count(fl:modules/fl:module)" /></p>
-
-        <h3>All ingredients</h3>
-        <ul>
-        <xsl:for-each select="fl:modules/fl:module/fl:ingredients/fl:ingredient">
-            <li><xsl:value-of select="./@amount" /><xsl:value-of select="./@unitShort" />&#160;<xsl:value-of select="./@text" /></li>
-        </xsl:for-each>
-        </ul>
-        
-        <h3>All equipment</h3>
-        <ul>
-            <xsl:for-each select="fl:modules/fl:module/fl:equipments/fl:equipment/@text[generate-id() = generate-id(key('equipment',.)[1])]">
-                <li><xsl:value-of select="." /></li>
-            </xsl:for-each>
-        </ul>
-
-        <xsl:for-each select="fl:modules/fl:module">
-            <h2>Module: <xsl:value-of select="./@text" /> (<xsl:value-of select="fl:time/@amount" /><xsl:value-of select="fl:time/@unitShort" />)</h2>
-            <h3>Ingredients</h3>
-            <ul>
-            <xsl:for-each select="fl:ingredients/fl:ingredient">
-                <li><xsl:value-of select="./@amount" /><xsl:value-of select="./@unitShort" />&#160;<xsl:value-of select="./@text" /></li>
-            </xsl:for-each>
-            </ul>
-
-            <h3>Equipment</h3>
-            <ul>
-                <xsl:for-each select="fl:equipments/fl:equipment">
-                    <li><xsl:value-of select="./@amount" />&#160;<xsl:value-of select="./@text" /></li>
+                    <!--li>Number of modules: <xsl:value-of select="count(fl:modules/fl:module)" /></li-->
+                </ul>
+            </div>
+            </div>
+        <!--/header-->
+        <!--section-->
+            <div class="column_left">
+                <div>
+                <h3>Shopping list</h3>
+                <ul>
+                    <xsl:for-each select="fl:modules/fl:module/fl:ingredients/fl:ingredient">
+                        <li><xsl:value-of select="./@amount" /><xsl:value-of select="./@unitShort" />&#160;<xsl:value-of select="./@text" /></li>
+                    </xsl:for-each>
+                </ul>
+            </div>
+            <div>
+                <h3>All equipment</h3>
+                <ul>
+                    <xsl:for-each select="fl:modules/fl:module/fl:equipments/fl:equipment/@text[generate-id() = generate-id(key('equipment',.)[1])]">
+                        <li><xsl:value-of select="." /></li>
+                    </xsl:for-each>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>Warnings:</h3>
+                <ul>
+                <xsl:for-each select="fl:ingredient_warnings/fl:warning">
+                    <li><xsl:value-of select="." /></li>
                 </xsl:for-each>
-            </ul>
-            
-            <h3>Procedure</h3>
-            <xsl:for-each select="fl:description/fl:step">
-                <p><xsl:value-of select="./@number"/>.&#160;<xsl:value-of select="." /></p>
-            </xsl:for-each>
+                </ul>
+            </div>
+            </div>
+        <xsl:for-each select="fl:modules/fl:module">
+            <div class="module">
+                <h2>Module: <xsl:value-of select="./@text" /> (<xsl:value-of select="fl:time/@amount" /><xsl:value-of select="fl:time/@unitShort" />)</h2>
+                <div class="ingredients">
+                <h3>Ingredients</h3>
+                <ul class="ingredients">
+                <xsl:for-each select="fl:ingredients/fl:ingredient">
+                    <li><xsl:value-of select="./@amount" /><xsl:value-of select="./@unitShort" />&#160;<xsl:value-of select="./@text" /></li>
+                </xsl:for-each>
+                </ul>
+                </div>
 
+                <div class="equipment">
+                <h3>Equipment</h3>
+                <ul class="equipment">
+                    <xsl:for-each select="fl:equipments/fl:equipment">
+                        <li><xsl:value-of select="./@text" /></li>
+                    </xsl:for-each>
+                </ul>
+                </div>
+                <div class="procedure">
+                    <h3>Procedure</h3>
+                    <xsl:for-each select="fl:description/fl:step">
+                        <p><xsl:value-of select="./@number"/>.&#160;<xsl:value-of select="." /></p>
+                    </xsl:for-each>
+                </div>
+            </div>
         </xsl:for-each>
-        <h2>Assembly: (<xsl:value-of select="fl:modules/fl:assembly/fl:time/@amount" /><xsl:value-of select="fl:modules/fl:assembly/fl:time/@unitShort" />)</h2>
-        <xsl:for-each select="fl:modules/fl:assembly/fl:step">
-            <p><xsl:value-of select="./@number" />.&#160;<xsl:value-of select="." /></p>
-        </xsl:for-each>
+        <!--/section-->
+            <div class="assembly">
+                <div class="procedure">
+                    <h2>Assembly: (<xsl:value-of select="fl:modules/fl:assembly/fl:time/@amount" /><xsl:value-of select="fl:modules/fl:assembly/fl:time/@unitShort" />)</h2>
+                    <xsl:for-each select="fl:modules/fl:assembly/fl:step">
+                        <p><xsl:value-of select="./@number" />.&#160;<xsl:value-of select="." /></p>
+                    </xsl:for-each>
+                </div>
+            </div>
+        </div>
     </body>
     </html>
+</xsl:template>
+
+<xsl:template name="addHat">
+    <xsl:param name="index" select="fl:complexity/@level" />
+    <img class="difficulty" src="../img/hat.gif" alt="hat" />
+    <xsl:if test="$index > 1">
+        <xsl:call-template name="addHat">
+            <xsl:with-param name="index" select="$index -1" />
+        </xsl:call-template>
+    </xsl:if>
 </xsl:template>
 
  </xsl:stylesheet>

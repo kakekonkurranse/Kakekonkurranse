@@ -12,7 +12,8 @@
 		<xs:element name="time" minOccurs="1" maxOccurs="1" type="time" />
 		<xs:element name="complexity" minOccurs="1" maxOccurs="1" type="complexity" />
 		<xs:element name="ingredient_warnings" minOccurs="0" maxOccurs="1" type="ingredient_warnings" />
-		<xs:element name="modules" type="module_list"/>
+		<xs:element name="image" minOccurs="0" maxOccurs="1" type="xs:string" />
+        <xs:element name="modules" type="module_list"/>
 		</xs:sequence>
 	</xs:complexType>
 	

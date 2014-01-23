@@ -1,98 +1,228 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background-color: #9DB28C;
-    /*background-image: url('../img/background.png');
-    background-repeat: repeat-x repeat-y;*/
+body, html {
+    width: 100%;
 }
 
-div#content {
-    margin: 4em auto;
-    padding: 2em 2em;
-    background-color: #C5CEFF;
-    /*height: 100% !important;*/
-    width: 67%;
-    border-radius: 1em;
+body * {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+body { 
+    color: #333333;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #000;
+    width: 940px;
+    background-color: #EEE;
+}
+
+
+.container:before, .container:after {
+    content: "";
+    display: table;
+    line-height: 0;
+}
+
+.row:before, .row:after {
+    content: "";
+    display: table;
+    line-height: 0;
+}
+
+.row:after {
+    clear: both;
+}
+
+.row {
+    margin-left: -20px;
+}
+
+.span4 {
+    width: 300px;
+}
+
+[class*="span"] {
     float: left;
+    margin-left: 20px;
+    min-height: 1px;
 }
 
-.heading h1, p.description {
-    text-align: center;
-    padding: 0 0 0.5em 0;
-    margin: 0;
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
 }
 
-ul.inline {
-    list-style: none;
-    /*float: right;*/
-    /*clear: both;*/
+.clearfix:after {
+    clear: both;
 }
 
-.inline li {
-    display: inline;
-    padding: 0 2em;
+.post-header {
+    /*border-bottom: 1px solid #EEEEEE;*/
+    margin-bottom: 15px;
+    padding: 20px;
 }
 
-.summary h3 {
+#sidebar .widget {
+    margin-bottom: 30px;
+}
+
+.personal-image {
+    -moz-box-sizing: border-box;
+    background: none repeat scroll 0 0 #FFFFFF;
+    /*box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 0 0 transparent, 0 0 0 transparent, 0 0 0 transparent, 0 0 0 transparent;*/
+}
+
+#wrapper {
+    padding: 20px 0;
+}
+
+#wrapper .container {
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #E0E0E0;
+    border-radius: 5px 5px 5px 5px;
+    padding: 20px 20px 0;
+}
+
+.post, #comments, #pings, #no-comments, #respond { 
+    background: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.196), transparent 0px 0px 0px, transparent 0px 0px 0px, transparent 0px 0px 0px, transparent 0px 0px 0px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    margin: 0px 0px 20px;
+    position: relative;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+img.complexity {
+    height: 3em;
+    width: 2.5em;
+}
+
+.fademe img, a img {
+    opacity: 1;
+    transition: opacity 0.25s ease-in-out 0s;
+}
+
+.post-header-meta h3 {
     display: inline;
     padding: 0 1em 0 0;
 }
 
-img.difficulty {
-    height: 2em;
-    width: 1.5em;
+ul.inline {
+    list-style: none;
+    padding: 0;
 }
 
-div.ingredients {
-    clear: left;
-    float: left;
-    width: 33%;
+.entry-content, .entry-summary {
+    padding: 0 20px;
 }
 
-div.heading {
-    float: left;
-    width: 66%;
-}
-div.procedure {
-    clear: left;
-    float: left;
-    width: 66%;
+ul.procedure {
+    list-style: none;
 }
 
-div.equipment {
+.procedure li {
+    padding-bottom: 0.5em;
+}
+
+.inline li {
+    display: inline;
+}
+
+.standard-pi-pic {
+    text-align: center;
+    background: none repeat scroll 0 0 #EEEEEE;
+}
+
+
+.post p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+
+.standard-pi-bio {
+    color: #888888;
+    margin-bottom: 0;
+    padding: 10px;
+}
+
+
+.post-header-meta { 
+color: #999999;
+margin: 0px;
+}
+
+.alignleft { 
+    float: left;
+    margin: 0.5em 20px 0.5em 0px;
+}
+
+.thumbnail { 
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.055);
+    display: block;
+    line-height: 20px;
+    padding: 4px;
+    transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1) 0;
+}
+
+.post .thumbnail { 
+    padding: 4px;
+}
+
+.post-header .thumbnail { 
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.thumbnail {
+    line-height: 20px;
+}
+
+a {
+    transition: all 0.25s ease-in-out 0s;
+}
+
+a {
+    color: #4D8B97;
+}
+
+.post-meta {
+    border-top: 1px solid #EEEEEE;
+    color: #888888;
+    font-size: 12px;
+    padding: 20px;
+}
+
+
+.pull-left {
     float: left;
 }
 
-div.picture {
-    clear: left;
-    float: left;
-    /*border: 1px solid #000;*/
-    height: 15em;
-    width: 20em;
-}
 
-div.summary {
-    clear: right;
-    float: left;
-    width: 100%;
-}
-
-div.column_left {
-    clear: left;
-    float: left;
-    width: 33%;
-}
-
-div.column {
-    float: left;
-    width: 33%;
-}
-
-div.module, div.assembly {
-    clear: right;
+.pull-right {
     float: right;
-    width: 66%;
 }
+
+.span8 {
+    width: 620px;
+}
+
+
 
 

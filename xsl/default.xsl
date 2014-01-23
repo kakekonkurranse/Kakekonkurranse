@@ -34,14 +34,26 @@
                 <ul class="inline">
                     <li><h3>Complexity</h3><xsl:call-template name="addHat" /></li>
                     <li><h3>Time</h3><xsl:value-of select="fl:time/@amount" /><xsl:value-of select="fl:time/@unitShort" /></li>
-
-                    <!--li>Number of modules: <xsl:value-of select="count(fl:modules/fl:module)" /></li-->
                 </ul>
             </div>
             </div>
         <!--/header-->
         <!--section-->
             <div class="column_left">
+                <div>
+                    <h3>Complexity</h3>
+                    <ul class="inline">
+                        <li><xsl:call-template name="addHat" /></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Time</h3>
+                    <ul class="inline">
+                        <li><xsl:value-of select="fl:time/@amount" /><xsl:value-of select="fl:time/@unitShort" /></li>
+                    </ul>
+                    <canvas id="time">
+                    </canvas>
+                </div>
                 <div>
                 <h3>Shopping list</h3>
                 <ul>
@@ -105,6 +117,7 @@
                 </div>
             </div>
         </div>
+        <xsl:call-template name="javascript" />
     </body>
     </html>
 </xsl:template>
@@ -117,6 +130,18 @@
             <xsl:with-param name="index" select="$index -1" />
         </xsl:call-template>
     </xsl:if>
+</xsl:template>
+
+<xsl:template name="javascript">
+    <script>
+        var canvas = document.getElementById('time');
+        if (canvas.getContext) {
+            var ctx = canvas.getContext('2d'); 
+       
+            /* Reset canvas */
+            canvas.width = canvas.width;
+        }
+    </script>
 </xsl:template>
 
  </xsl:stylesheet>

@@ -62,6 +62,7 @@
 	<xs:complexType name="assembly">
 	    <xs:sequence>
 		    <xs:element name="time" minOccurs="1" maxOccurs="1" type="time" />
+		    <xs:element name="equipments" minOccurs="0" maxOccurs="1" type="equipment_list" />
 		    <xs:element name="step" minOccurs="1" maxOccurs="unbounded" type="step" />
 	    </xs:sequence>
 	</xs:complexType>

@@ -3,7 +3,7 @@
 <!--cake xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
 	<title>Napoleon cake</title>
 	<description>The best cake out there!</description>
-	<time amount="5.5" unit="hour" unitShort="h" />
+	<time amount="210" unit="minutes" unitShort="min" />
 	<complexity level="5" />
 	<ingredient_warnings>
     	<warning>gluten</warning>
@@ -11,7 +11,7 @@
     <image>napoleon_cake2.gif</image>
 	<modules>
 		<module id="butter_dough" text="Butter dough">
-	        <time amount="3.5" unit="hour" unitShort="h" />
+	        <!--time amount="120" unit="minutes" unitShort="min" /-->
 			<ingredients>
 				<ingredient id="butter" text="Butter" amount="200" unit="gram" unitShort="g" />
 				<ingredient id="flour" text="Flour" amount="500" unit="gram" unitShort="g" />
@@ -33,7 +33,7 @@
 			</description>
 		</module>
 		<module id="fill" text="Fill">
-	        <time amount="0.5" unit="hour" unitShort="h" />
+	        <!--time amount="20" unit="minutes" unitShort="min" /-->
 			<ingredients>
 				<ingredient id="cream" text="Cream" amount="3" unit="decilitre" unitShort="dl" />
 				<ingredient id="vanilla_cream" text="Vanilla cream" amount="500" unit="gram" unitShort="g" />
@@ -52,7 +52,7 @@
 			</description>
 		</module>
 		<module id="glaze" text="Glaze">
-	        <time amount="0.5" unit="hour" unitShort="h" />
+	        <!--time amount="20" unit="minutes" unitShort="min" /-->
 			<ingredients>
 				<ingredient id="rom_essence" text="Rom essence" amount="2-6" unit="drops" unitShort="drops" />
 				<ingredient id="egg_white" text="Egg white" amount="1-2" unit="pieces" unitShort="pcs" />
@@ -67,8 +67,8 @@
 			</description>
 		</module>
 		<assembly>
-	        <time amount="1" unit="hour" unitShort="h" />
-			<step number="1">Fordel krem på halvparten av bunnene.</step>
+	        <!--time amount="30" unit="minutes" unitShort="min" /-->
+            <step number="1">Fordel krem på halvparten av bunnene.</step>
 			<step number="2">Smør glasuren på den ene halvparten av butterdeigsplatene, som så legges på til lokk.</step>
 		</assembly>
 	</modules>

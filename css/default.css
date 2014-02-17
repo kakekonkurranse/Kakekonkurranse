@@ -141,6 +141,14 @@ ul.procedure {
     display: inline;
 }
 
+li.complexity {
+    padding-right: 1em;
+}
+
+li.total_time {
+    padding-right: 2em;
+}
+
 .standard-pi-pic {
     text-align: center;
     background: none repeat scroll 0 0 #EEEEEE;
@@ -223,6 +231,20 @@ a {
     width: 620px;
 }
 
+h3.left {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e3e3e3;
+}
 
+div.left_info_box {
+    background: white;
+    padding:15px;
+    border-radius: 4px;
+    border: 1px solid #e3e3e3;
+    float: left;
+    clear: left;
+    width: 90%;
+    margin-bottom: 20px;
+}
 
 

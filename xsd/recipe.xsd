@@ -13,9 +13,18 @@
 		<xs:element name="complexity" minOccurs="1" maxOccurs="1" type="complexity" />
 		<xs:element name="ingredient_warnings" minOccurs="0" maxOccurs="1" type="ingredient_warnings" />
 		<xs:element name="image" minOccurs="0" maxOccurs="1" type="xs:string" />
+		<xs:element name="baker" minOccurs="0" maxOccurs="1" type="baker" />
         <xs:element name="modules" type="module_list"/>
 		</xs:sequence>
 	</xs:complexType>
+
+    <xs:complexType name="baker">
+        <xs:sequence>
+            <xs:element name="firstname" type="xs:string" />
+            <xs:element name="surname" type="xs:string" />
+            <xs:element name="picture" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
 	
 	<xs:complexType name="module_list">
         <xs:sequence>
@@ -26,7 +35,7 @@
 
 	<xs:complexType name="module">
         <xs:sequence>
-		    <xs:element name="time" minOccurs="1" maxOccurs="1" type="time" />
+		    <!--xs:element name="time" minOccurs="1" maxOccurs="1" type="time" /-->
             <xs:element name="ingredients" type="ingredient_list" />
             <xs:element name="equipments" type="equipment_list" />
             <xs:element name="description" type="step_list" />
@@ -61,7 +70,7 @@
 
 	<xs:complexType name="assembly">
 	    <xs:sequence>
-		    <xs:element name="time" minOccurs="1" maxOccurs="1" type="time" />
+		    <!--xs:element name="time" minOccurs="1" maxOccurs="1" type="time" /-->
 		    <xs:element name="equipments" minOccurs="0" maxOccurs="1" type="equipment_list" />
 		    <xs:element name="step" minOccurs="1" maxOccurs="unbounded" type="step" />
 	    </xs:sequence>

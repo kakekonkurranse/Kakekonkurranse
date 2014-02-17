@@ -9,6 +9,11 @@
     	<warning>gluten</warning>
     </ingredient_warnings>
     <image>napoleon_cake2.gif</image>
+    <baker>
+        <firstname>John</firstname>
+        <surname>Johnson</surname>
+        <picture></picture>
+    </baker>
 	<modules>
 		<module id="butter_dough" text="Butter dough">
 	        <!--time amount="120" unit="minutes" unitShort="min" /-->

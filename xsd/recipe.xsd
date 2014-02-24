@@ -15,6 +15,7 @@
 		<xs:element name="image" minOccurs="0" maxOccurs="1" type="xs:string" />
 		<xs:element name="baker" minOccurs="0" maxOccurs="1" type="baker" />
         <xs:element name="modules" type="module_list"/>
+	    <xs:element name="bekim_says" type="xs:string" minOccurs="0" maxOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 

@@ -13,7 +13,6 @@ public class KakeServlet extends HttpServlet {
 			throws ServletException, IOException {
 		
 		
-		
 		resp.sendError(
 				req.getProtocol().endsWith("1.1") ? HttpServletResponse.SC_METHOD_NOT_ALLOWED
 						: HttpServletResponse.SC_BAD_REQUEST,

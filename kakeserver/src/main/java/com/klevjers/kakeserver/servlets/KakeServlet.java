@@ -11,12 +11,15 @@ public class KakeServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		
-		
 		resp.sendError(
 				req.getProtocol().endsWith("1.1") ? HttpServletResponse.SC_METHOD_NOT_ALLOWED
 						: HttpServletResponse.SC_BAD_REQUEST,
 				"Unsupported operation");
 	}
 
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		String[] paramValues = req.getParameterValues("");
+		
+	}
 }
